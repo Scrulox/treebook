@@ -1,15 +1,15 @@
 Treebook::Application.routes.draw do
   devise_for :users
 
-  resources :statuses
-  root to: 'statuses#index'
-
   devise_scope :user do 
     get 'register', to: 'devise/registration#new', as: :register
     get 'login', to: "devise/sessions#new", as: :login
     get "logout", to: "devise/sessions#destroy", as: :logout
   end
 
+  resources :statuses
+  get 'feed', to: "statuses#index", as: :feed
+  root to: 'statuses#index'
 
 
   end
@@ -72,4 +72,4 @@ Treebook::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end
+
