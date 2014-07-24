@@ -4,6 +4,17 @@ Treebook::Application.routes.draw do
   resources :statuses
   root to: 'statuses#index'
 
+  devise_scope :user do 
+    get 'register', to: 'devise/registration#new', as: :register
+    get 'login', to: "devise/sessions#new", as: :login
+    get "logout", to: "devise/sessions#destroy", as: :logout
+  end
+
+
+
+  end
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
