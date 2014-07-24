@@ -5,3 +5,11 @@ jacky:
   profile_name: "jackyho"
   password: "password"
   password_confirmation: "password"
+
+jim:
+  first_name: "Jim"
+  last_name: "Ha"
+  email: "jimha@gmail.com"
+  profile_name: "jimha"
+  password: "password"
+  password_confirmation: "password"
